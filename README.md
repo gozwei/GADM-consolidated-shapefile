@@ -24,3 +24,16 @@ This script will:
 4. save one consolidated shapefile to disk
 
 Please make sure to update `dataPath` and `targetPath` before running. 
+
+## How to use consolidated shapefile?
+
+```
+import geopandas as gp
+countries = gp.read_file('consolidated.shp')
+
+ax = plt.subplot(1,1,1)
+db.boundary.plot(ax=ax, edgecolor='black', lw=0.4)
+plt.axis([-180, 180, -90, 90])
+```
+
+![GADM 4.1 borders](_/world.png "GADM 4.1 borders")
